@@ -16,3 +16,10 @@ user_router = Router()
 BASE_DIR = os.path.dirname(__file__)
 
 admins = {1845541473, 286365412}
+
+
+files = {
+    'california': ['california'],
+    'illinois': ['Falcon', 'UniqueID'],
+    'pennsylvania': []
+}

@@ -1,5 +1,5 @@
-from setup import bot, dp
-from user import user_router
+from src.setup import bot, dp
+from src.user import user_router
 import asyncio
 from loguru import logger
 
