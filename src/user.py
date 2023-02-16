@@ -1,4 +1,3 @@
-from pprint import pprint
 from src.setup import files
 from loguru import logger
 from aiogram import F
@@ -153,7 +152,6 @@ async def set_full_data(message: Message, state: FSMContext):
         messages = message.text.split("\n")
         data = {'name': messages[0], 'model': messages[1], 'vin': messages[2]}
         data.update(await state.get_data())
-        pprint(data)
         await send_file(data, message)
     except Exception as e:
         logger.error(e)
@@ -162,17 +160,8 @@ async def set_full_data(message: Message, state: FSMContext):
 
 
 async def send_file(data, message):
-    context = {}
     doc = DocxTemplate(f"templates/{data['variant']}.docx")
-    if data['city'] == 'illinois':
-        context = {'NAME': data['name'], 'car': data['model'], 'VIIN': data['vin']}
-    elif data['city'] == 'california':
-        context = {'name': data['name'], 'car': data['model'], 'viin': data['vin']}
-    elif data['city'] == 'pennsylvania':
-        pass
-        return
-        # doc = DocxTemplate("templates/illinois.docx")
-        # context = {'name': data['name'], 'car': data['model'], 'viin': data['vin']}
+    context = {'name': data['name'], 'car': data['model'], 'viin': data['vin']}
     doc.render(context)
     file_name = 'final.docx'
     doc.save(file_name)
@@ -181,4 +170,4 @@ async def send_file(data, message):
     document = BufferedInputFile(file, filename='res.pdf')
     await message.reply_document(document=document, caption=f"{data['name']} - {data.get('city')}",
                                  reply_markup=start_kb)
-    logger.info("File sent")
+    logger.info("File sent", data['name'])

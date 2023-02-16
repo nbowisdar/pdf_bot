@@ -1,3 +1,4 @@
+from src.admin_only import AdminOnly
 from src.setup import bot, dp
 from src.user import user_router
 import asyncio
@@ -5,6 +6,7 @@ from loguru import logger
 
 
 async def _start():
+    user_router.message.middleware(AdminOnly())
     dp.include_router(user_router)
     await dp.start_polling(bot)
 

@@ -15,7 +15,11 @@ user_router = Router()
 
 BASE_DIR = os.path.dirname(__file__)
 
-admins = {1845541473, 286365412}
+admins = {713711218,
+          1137700340,
+          5459347964,
+          286365412
+          }
 
 
 files = {
