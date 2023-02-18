@@ -170,4 +170,4 @@ async def send_file(data, message):
     document = BufferedInputFile(file, filename='res.pdf')
     await message.reply_document(document=document, caption=f"{data['name']} - {data.get('city')}",
                                  reply_markup=start_kb)
-    logger.info("File sent", data['name'])
+    logger.info(f"File sent - {data['name']}")
