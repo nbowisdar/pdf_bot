@@ -9,7 +9,7 @@ from aiogram.types import Message, CallbackQuery
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 from docxtpl import DocxTemplate
 
-from src.keyboards import order_btn, start_kb, city_kb, cancel_btn, choose_version
+from src.keyboards import order_btn, start_kb, cancel_btn, choose_version, build_cities_btns
 from src.setup import user_router
 from utils.convert_files import convert_docx_to_pdf
 
@@ -114,7 +114,7 @@ async def send_file_il(data, message):
 @user_router.message(F.text == "🌪 Insurance")
 async def start(message: Message, state: FSMContext):
     # await state.set_state(FullState.city)
-    await message.answer('Choose city:', reply_markup=city_kb)
+    await message.answer('Choose city:', reply_markup=build_cities_btns())
 # choose_version
 
 

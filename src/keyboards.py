@@ -2,6 +2,8 @@ from aiogram.types import KeyboardButton, ReplyKeyboardMarkup,\
     InlineKeyboardButton, InlineKeyboardMarkup
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 
+from src.setup import cities
+
 kb1 = [
     [KeyboardButton(text="❌ Cancel")]
 ]
@@ -36,18 +38,30 @@ start_kb = ReplyKeyboardMarkup(
     resize_keyboard=True
 )
 
-in_kb1 = [
-    [InlineKeyboardButton(text="🏰 Illinois",
-                          callback_data="city|illinois"),
-     InlineKeyboardButton(text="🏙 California",
-                          callback_data="city|california")],
-    [InlineKeyboardButton(text="🌆 Pennsylvania",
-                          callback_data="city|pennsylvania")]
-]
 
-city_kb = InlineKeyboardMarkup(
-    inline_keyboard=in_kb1
-)
+def build_cities_btns():
+    builder = InlineKeyboardBuilder()
+    for city in cities:
+        builder.add(
+            InlineKeyboardButton(text=f"{city}",
+                                 callback_data=f"city|{city}")
+        )
+    builder.adjust(2)
+    return builder.as_markup()
+
+# in_kb1 = [
+#
+#     [InlineKeyboardButton(text="🏰 Illinois",
+#                           callback_data="city|illinois"),
+#      InlineKeyboardButton(text="🏙 California",
+#                           callback_data="city|california")],
+#     [InlineKeyboardButton(text="🌆 Pennsylvania",
+#                           callback_data="city|pennsylvania")]
+# ]
+
+# city_kb = InlineKeyboardMarkup(
+#     inline_keyboard=in_kb1
+# )
 
 
 async def choose_version(variants: list[str]) -> InlineKeyboardMarkup:
