@@ -56,5 +56,5 @@ async def choose_version(variants: list[str]) -> InlineKeyboardMarkup:
         builder.add(InlineKeyboardButton(
             text=var, callback_data=f"var|{var}"
         ))
-    builder.adjust(3)
+    builder.adjust(1)
     return builder.as_markup()
