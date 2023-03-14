@@ -35,17 +35,37 @@ admins = {286365412,
 
 files = {
     'California': [
-        'california',
-        'Adriana Insurance',
-        'All State Insurance Company',
-        'Bristol West Insurance Company',
-        'Direct Auto Insurance Company',
-        'Farmers Insurance Company'],
-    'Illinois': ['Falcon', 'UniqueID'],
-    'Pennsylvania': [],
-    'Florida': [],
-    'Washington': [],
-    'Massachusetts': []
+        'Mercury Insurance CA',
+        'Adriana Insurance CA',
+        'All State Insurance CA'
+    ],
+    'Illinois': [
+        'Falcon IL', 'UniqueID',
+        "Direct Auto Insurance IL",
+        "Bristol West Insurance IL",
+        "Clearcover Insurance IL"
+    ],
+    'Pennsylvania': [
+        'Bristol West Insurance PA',
+        'Direct Auto Insurance PA',
+        'Farmers Insurance PA'
+    ],
+    'Florida': [
+        "Safeco Insurance FL",
+        "Direct Auto Insurance FL",
+        "Pronto Insurance FL"
+
+    ],
+    'Washington': [
+        "Insurance Services of Washington WA",
+        "Travelers Insurance WA",
+        "Country Financial Insurance WA"
+    ],
+    'Massachusetts': [
+        "Lighthouse Insurance MA",
+        "Eagle Trust Insurance MA",
+        "Gvy Insurance Insurance MA"
+    ]
 }
 
 cities = files.keys()
