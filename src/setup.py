@@ -24,7 +24,8 @@ admins = {286365412,
           5645161603,
           5501113966,
           5340595935,
-          829278587}
+          829278587,
+          612119814}
 
 # admins = {713711218,
 #           1137700340,
@@ -41,18 +42,18 @@ files = {
     ],
     'Illinois': [
         'Falcon IL', 'UniqueID',
-        "Direct Auto Insurance IL",
+        "Illinois Insurance Center IL",
         "Bristol West Insurance IL",
         "Clearcover Insurance IL"
     ],
     'Pennsylvania': [
-        'Bristol West Insurance PA',
+        'Pennsylvania Insurance Alliance Inc PA',
         'Direct Auto Insurance PA',
         'Farmers Insurance PA'
     ],
     'Florida': [
         "Safeco Insurance FL",
-        "Direct Auto Insurance FL",
+        "Florida Insurance Hub FL",
         "Pronto Insurance FL"
 
     ],
